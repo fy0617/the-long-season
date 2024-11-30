@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+	<title>poem</title>
+	<audio autoplay loop controls>
+		<source src="../audio/01.mp3">
+	</audio>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/demo.css" type="text/css">
+
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollmagic.js"></script>
+
+	<title>about</title>
+	<style>
+		.left-button:hover {
+			background-color: #70764a;
+			/* 鼠标悬停时的背景颜色 */
+		}
+
+		.left-button {
+			/* display: flex; */
+			/* justify-content: flex-end; */
+			padding: 10px 20px;
+			/* 按钮内边距 */
+			font-size: 16px;
+			/* 文字大小 */
+			color: rgb(255, 255, 255);
+			/* 文字颜色 */
+			background-color: #4779af;
+			/* 背景颜色 */
+			border: none;
+			/* 无边框 */
+			cursor: pointer;
+			/* 鼠标悬停时显示指针 */
+			transition: background-color 0.3s;
+			/* 背景颜色渐变效果 */
+		}
+
+		nav {
+			background-color: #4779af;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="msg">
+		please <span class="word">scroll</span>
+		<div class="scroll"></div>
+		<a class="skip" href="#info">or click here to <span class="word">skip</span> <img
+				src="../img/demo_arrow_skip.png"></a>
+	</div>
+	<div id="content-wrapper">
+		<script type="text/javascript">
+			var controller;
+			if (Modernizr.touch) {
+				var myScroll;
+				$(document).ready(function () {
+					// wrap for iscroll
+					$("#content-wrapper")
+						.addClass("scrollContainer")
+						.wrapInner('<div class="scrollContent"></div>');
+
+					// add iScroll
+					myScroll = new IScroll('#content-wrapper', { scrollX: false, scrollY: true, scrollbars: true, useTransform: false, useTransition: false, probeType: 3 });
+
+					// update container on scroll
+					myScroll.on("scroll", function () {
+						controller.update();
+					});
+
+					// overwrite scroll position calculation to use child's offset instead of parents scrollTop();
+					controller.scrollPos(function () {
+						return -myScroll.y;
+					});
+
+					// refresh height, so all is included.
+					setTimeout(function () {
+						myScroll.refresh();
+					}, 0);
+
+					$("#content-wrapper").on("touchend", "a", function (e) {
+						// a bit dirty workaround for links not working in iscroll for some reason...
+						e.preventDefault();
+						window.location.href = $(this).attr("href");
+					});
+
+					// manual set hight (so height 100% is available within scroll container)
+					$(document).on("orientationchange", function () {
+						$("section")
+							.css("min-height", $(window).height())
+							.parent(".scrollmagic-pin-spacer").css("min-height", $(window).height());
+					});
+					$(document).trigger("orientationchange"); // trigger to init
+				});
+				// init the controller
+				controller = new ScrollMagic({
+					container: "#content-wrapper",
+					globalSceneOptions: {
+						triggerHook: "onLeave"
+					}
+				});
+			} else {
+				// init the controller
+				controller = new ScrollMagic({
+					globalSceneOptions: {
+						triggerHook: "onLeave"
+
+
+					}
+				});
+			}
+		</script>
+		<section id="start">
+			<div id="intro">
+				<img class="floor" src="../img/demo_floor.png">
+				<h1 style="color: yellow">《漫长的》班宇</h1>
+			</div>
+			<script type="text/javascript">
+				// wrap each title letter
+				$("#start h1").wrapEach(/(.)/g, "<span>$1</span>");
+
+				// animations
+				var nervousHat = new TimelineMax({ repeat: -1, yoyo: true })
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "+=5", left: "-=6", rotation: -3 }))
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "-=10", left: "+=6", rotation: 0 }))
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "+=5", left: "+=6", rotation: 3 }))
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "-=5", left: "-=3", rotation: 1.5 }))
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "+=5", left: "-=6", rotation: -1.5 }))
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "+=5", left: "+=3", rotation: 0 }))
+					.add(TweenMax.to("#start .tophat", 0.3, { bottom: "-=10" }));
+				var abracadabra = TweenMax.fromTo("#start .wand", 1, { top: -$(window).height() / 3, left: 370, rotation: 20 }, { top: 10, rotation: -20 });
+				var reveal = new TimelineMax()
+					.add([
+						TweenMax.to("#start .tophat", 1, { bottom: $(window).height(), left: "-=50", rotation: -20 }),
+						TweenMax.from("#start h1", 1, { scale: 0.4, top: "+=70", delay: 0.1 }),
+						TweenMax.to("#start .wand", 0.8, { top: -$(window).height() / 3, left: 450, rotation: 30 }),
+						TweenMax.to("#start .floor", 1, { autoAlpha: 0 })
+					]);
+				var laola = new TimelineMax()
+					.add(TweenMax.staggerTo("#start h1 span", 0.5, { top: -20 }, 0.2))
+					.add(TweenMax.staggerTo("#start h1 span", 0.5, { top: 0 }, 0.2), 0.5);
+
+				// container pin
+				var startpin = new ScrollScene({
+					duration: 700
+				})
+					.setPin("section#start")
+					.addTo(controller);
+
+				// msg scroll ani
+				new ScrollScene({
+					duration: 140,
+					offset: -100
+				})
+					.setTween(TweenMax.to("#msg div.scroll", 1, { backgroundPosition: "0 13px", repeat: -1, delay: 1, repeatDelay: 2, ease: Linear.easeNone }))
+					.addTo(controller);
+				// msg hide
+				new ScrollScene({
+					offset: 40
+				})
+					.setTween(TweenMax.to("#msg", 0.5, { bottom: -40 }))
+					.addTo(controller);
+
+				// hat movement
+				new ScrollScene({
+					duration: 300,
+					offset: -100
+				})
+					.setTween(nervousHat)
+					.addTo(controller);
+
+				// magic wand
+				new ScrollScene({
+					offset: 20,
+					duration: 180
+				})
+					.on("end", function (e) {
+						if (e.scrollDirection == "FORWARD" && startpin.progress() < 0.37) { // check pin progress so it doesnt launch on refresh
+							// make it rain!
+							$("#start .sparkpoint").sparkle({
+								amount: 40,
+								duration: 0.2
+							});
+						}
+					})
+					.setTween(abracadabra)
+					.addTo(controller);
+
+				// big reveal
+				new ScrollScene({
+					duration: 300,
+					offset: 260
+				})
+					.setTween(reveal)
+					.addTo(controller);
+
+				// jumping text
+				new ScrollScene({
+					duration: 200,
+					offset: 450
+				})
+					.setTween(laola)
+					.addTo(controller);
+
+			</script>
+		</section>
+		<section id="tweens">
+			<h3 style="color: yellow;">打个响指吧，他说<br>我们打个共鸣的响指</h3>
+			<h3 style="color: yellow;">遥远的事物将被震碎</h3>
+			<h3 style="color: yellow;">面前的人们此时尚不知情</h3>
+			<h3 style="color: yellow;">吹个口哨吧，我说</h3>
+			<h3 style="color: yellow;">吹个斜斜的口哨</h3>
+
+			<h3 style="color: yellow;">像一块铁</h3>
+			<script type="text/javascript">
+				var sceneOptions = { duration: 200, offset: -100 };
+				var elements = $("#tweens h3");
+
+
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[0])
+					.setTween(TweenMax.from(elements[0], 1, { left: "-50%", marginLeft: -1000, ease: Back.easeOut }));
+
+				new ScrollScene(sceneOptions)
+					.offset(200)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[0])
+					.setTween(TweenMax.to(elements[1], 1, { rotation: 360 }));
+
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[2])
+					.setTween(TweenMax.from(elements[2], 1, { autoAlpha: 0 }));
+
+				$(elements[3]).wrapEach(/(.)/g, "<span>$1</span>");
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[3])
+					.setTween(TweenMax.staggerTo($(elements[3]).children("span"), 0.0001, { textDecoration: "underline", textTransform: "uppercase" }, 0.2));
+
+				new ScrollScene(sceneOptions)
+					.offset(200)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[3]) // use previous element as trigger, as top position changes during spin
+					.setTween(TweenMax.to(elements[4], 1, { rotation: -30 }));
+
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[5])
+					.setTween(TweenMax.from(elements[5], 1, { scale: 0, ease: Back.easeOut }));
+
+
+
+			</script>
+		</section>
+		<section id="pin">
+
+			<h3 id="hlpin" style="color: yellow;">然后是一枚针</h3>
+
+			<div id="wipe">
+				<h3>磁极的弧线划过<b style="color: rgb(78, 139, 37);">绿玻璃</b></h3>
+			</div>
+			<div id="slide">
+				<h3>听一听水吧</h3>
+			</div>
+
+
+
+			<script type="text/javascript">
+
+				// draw ani
+				var drawAni = new TimelineMax({ delay: 0.2 });
+				var distancePerSecond = 700;
+				$("svg#draw path").each(function () {
+					var lineLength = $(this)[0].getTotalLength();
+					$(this).css("stroke-dasharray", lineLength);
+					$(this).css("stroke-dashoffset", lineLength);
+					drawAni.add(TweenMax.to(this, lineLength / distancePerSecond, { "stroke-dashoffset": 0 }));
+				});
+				console.log(drawAni.totalDuration());
+				// ani
+				var pinani = new TimelineMax()
+					// pin move down
+					.add(TweenMax.from("#pin>h3:first-child", 0.5, { top: "0%", marginTop: 0 }))
+
+					.add(TweenMax.to("#wipe", 1, { width: "100%", delay: 0.5 }))
+					.add(TweenMax.to("#slide", 1, { top: "0%", ease: Bounce.easeOut, delay: 0.2 }))
+					.add([
+						drawAni,
+						TweenMax.to("#pin>h3:first-child", 0.3, { autoAlpha: 0 })
+					])
+					.add(TweenMax.to("#wipe", 1, { width: "100%", delay: 0.2 }))
+					// slide
+					.add(TweenMax.to("#slide", 1, { top: "0%", ease: Bounce.easeOut, delay: 0.1 }))
+
+
+
+				// pin
+				new ScrollScene({
+					triggerElement: "section#pin",
+					duration: 1500
+				})
+					.on("progress", function () {
+						// keep centered even though width changes
+						$("#wipe h3").width($("#pin>h3").width());
+					})
+					.setTween(pinani)
+					.setPin("section#pin")
+					.addTo(controller);
+
+				// draw
+			</script>
+		</section>
+
+
+
+		<section id="parallax">
+			<div id="parallaxbg">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+			<h3 style="color: rgb(15, 117, 168);">也看一看河</h3>
+			<h3 style="color: rgb(100, 184, 226);" id="big">也看一看河</h3>
+			<script type="text/javascript">
+				// parallax
+				new ScrollScene({
+					triggerElement: "section#parallax",
+					duration: $(window).height() + 300,
+					offset: -150
+				})
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.setTween(new TimelineMax().add([
+						TweenMax.fromTo("#parallax #big", 1, { scale: 2, alpha: 0.1, top: "100%" }, { top: "0%", ease: Linear.easeNone }),
+						TweenMax.to("#parallax #parallaxbg", 1, { backgroundPosition: "0 -260%", ease: Linear.easeNone })
+					]));
+			</script>
+		</section>
+		<section id="tween2">
+			<h3 style="color: yellow;">在平静时平静，不平静时</h3>
+			<h3 style="color: yellow;">我们就错过了一层台阶</h3>
+			<h3 style="color: yellow;">一小颗眼泪滴在石头上</h3>
+			<h3 style="color: yellow;">很长时间也不会干涸</h3>
+			<h3 style="color: yellow;">整个季节将它结成了琥珀</h3>
+
+			<script type="text/javascript">
+				var sceneOptions = { duration: 200, offset: -100 };
+				var elements = $("#tween2 h3");
+
+
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[0])
+					.setTween(TweenMax.from(elements[0], 1, { left: "-50%", marginLeft: -1000, ease: Back.easeOut }));
+
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[1])
+					.setTween(TweenMax.from(elements[1], 1, { left: "-50%", marginLeft: -1000, ease: Back.easeOut }));
+
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[2])
+					.setTween(TweenMax.from(elements[2], 1, { autoAlpha: 0 }));
+
+				$(elements[3]).wrapEach(/(.)/g, "<span>$1</span>");
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[3])
+					.setTween(TweenMax.staggerTo($(elements[3]).children("span"), 0.0001, { textDecoration: "underline", textTransform: "uppercase" }, 0.2));
+
+
+				$(elements[4]).wrapEach(/(.)/g, "<span>$1</span>");
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[4])
+					.setTween(TweenMax.staggerTo($(elements[4]).children("span"), 0.0001, { textDecoration: "underline", textTransform: "uppercase" }, 0.2));
+
+
+
+
+			</script>
+		</section>
+		<section id="end">
+
+			<h3 style="color: yellow;">块状的流淌<br>具体的光芒<br>在它身后是些遥远的事物……</h3>
+		</section>
+		<section id="info">
+			<h1 style="color: rgb(133, 105, 11);">《漫长的》作者班宇：打个共鸣的响指吧</h1>
+			<div id="content">
+
+				<h2>
+					有心的观众会留意到剧中多次出现的这首诗。诗在第5集出现时，无法理解儿子的王响还指导王阳第二句应该是“吹起小喇叭，嗒滴嗒滴嗒”；后来，王阳在铁轨上为沈墨读诗；再后来，王阳不在了，王响对王北念起了这首诗。
+				</h2>
+				<h2>
+					这首诗在小说《漫长的季节》中也出现了。但事实上，在小说和剧诞生之前，班宇就已经写好了这首诗，它是一首写给朋友的诗。
+				</h2>
+				<h2>
+					“这些年我很少写诗了，可能一年就写那么一点点。这首诗是一个独立的存在，只是后来我发现它用在小说里，用在剧里，都非常合适。所以无论在我的小说还是这个剧里，这首诗都起到了道具的作用。它不是只代表我的诗歌审美取向，而是我小说里的人和剧里的人都需要写一首诗。这首诗不能太艰深晦涩，也不能写得太差，我写它时在心里把它想成一种谣，有点那种感觉。它是我小说里的文学初学者，或是剧里王阳这样一个东北文艺小青年可以写出来的，没有什么技巧，但能流露出一点真诚的，这样一篇东西。”
+				</h2>
+
+
+
+		</section>
+		<button class="left-button" id="back_to">返回</button>
+		<object data="SVG/railway.svg"></object>
+	</div>
+
+
+
+
+
+
+	<script>
+		var buttona = document.getElementById('back_to');
+		buttona.addEventListener('click', function () { window.location.href = '../index.html'; });
+	</script>
+
+
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-37524344-3', 'janpaepke.github.io');
+		ga('send', 'pageview');
+	</script>
+</body>
+
+</html>

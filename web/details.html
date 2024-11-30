@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Details</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="css/featherlight.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/featherlight.gallery.min.css" />
+	<style type="text/css">
+		@media all {
+
+
+			body {
+				font-family: Arial, sans-serif;
+				background-image: url('../img/bg_1.jpeg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center top;
+
+			}
+
+			.left-button:hover {
+				background-color: #70764a;
+				/* 鼠标悬停时的背景颜色 */
+			}
+
+			.left-button {
+				/* display: flex; */
+				/* justify-content: flex-end; */
+				padding: 10px 20px;
+				/* 按钮内边距 */
+				font-size: 16px;
+				/* 文字大小 */
+				color: rgb(255, 255, 255);
+				/* 文字颜色 */
+				background-color: #4779af;
+				/* 背景颜色 */
+				border: none;
+				/* 无边框 */
+				cursor: pointer;
+				/* 鼠标悬停时显示指针 */
+				transition: background-color 0.3s;
+				/* 背景颜色渐变效果 */
+			}
+
+			nav {
+				background-color: #4779af;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+			}
+
+			.lightbox {
+				display: none;
+			}
+
+			.fl-page h1,
+			.fl-page h3,
+			.fl-page h4 {
+				font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+				font-weight: 100;
+				letter-spacing: 1px;
+			}
+
+			.fl-page h1 {
+				font-size: 110px;
+				margin-bottom: 0.5em;
+			}
+
+			.fl-page h1 i {
+				font-style: normal;
+				color: #ddd;
+			}
+
+			.fl-page h1 span {
+				font-size: 30px;
+				color: #333;
+			}
+
+			.fl-page h3 {
+				text-align: right;
+			}
+
+			.fl-page h3 {
+				font-size: 15px;
+			}
+
+			.fl-page h4 {
+				font-size: 2em;
+			}
+
+			.fl-page .jumbotron {
+				margin-top: 2em;
+			}
+
+			.fl-page .btn-download {
+				float: right;
+				margin-top: -40px;
+			}
+
+			.fl-page .btn-default {
+				vertical-align: bottom;
+			}
+
+			.fl-page .row {
+				margin-top: 2em;
+			}
+
+			.fl-page .btn-lg span {
+				font-size: 0.7em;
+			}
+
+			.fl-page .footer {
+				margin-top: 3em;
+				color: #aaa;
+				font-size: 0.9em;
+			}
+
+			.fl-page .footer a {
+				color: #999;
+				text-decoration: none;
+				margin-right: 0.75em;
+			}
+
+			.fl-page .github {
+				margin: 2em 0;
+			}
+
+			.fl-page .github a {
+				vertical-align: top;
+			}
+
+
+			.featherlight-gallery2 {
+				background: rgba(100, 100, 100, 0.5);
+			}
+
+			.featherlight-gallery2 .featherlight-content {
+				background: #000;
+			}
+
+			.featherlight-gallery2 .featherlight-next:hover,
+			.featherlight-gallery2 .featherlight-previous:hover {
+				background: rgba(0, 0, 0, 0.5);
+			}
+
+			.featherlight-gallery2 .featherlight-next:hover span,
+			.featherlight-gallery2 .featherlight-previous:hover span {
+				font-size: 25px;
+				line-height: 25px;
+				margin-top: -12.5px;
+				color: #fff;
+			}
+
+			.featherlight-gallery2 .featherlight-close {
+				background: transparent;
+				color: #d2d0c0;
+				font-size: 1.2em;
+			}
+
+			.featherlight-gallery2.featherlight-last-slide .featherlight-next,
+			.featherlight-gallery2.featherlight-first-slide .featherlight-previous {
+				display: none;
+			}
+
+			/* text slide */
+			.thumbnail a {
+				text-decoration: none;
+			}
+
+			.blurb {
+				display: inline-block;
+				width: 150px;
+				height: 150px;
+			}
+
+			.blurb h2 {
+				text-align: center;
+			}
+
+			.blurb .detail {
+				display: none;
+			}
+
+			.blurb .teaser {
+				font-style: italic;
+				text-align: center;
+			}
+
+			.featherlight .blurb {
+				display: inline-block;
+				width: 800px;
+				height: 300px;
+				color: rgb(237, 223, 14);
+			}
+
+			.featherlight .blurb .detail {
+				color: rgb(237, 223, 14);
+				font-size: large;
+				display: inherit;
+			}
+
+			.featherlight .blurb .teaser {
+				display: none;
+			}
+
+			.span .detail {
+				width: 100%;
+			}
+		}
+
+		@media(max-width: 768px) {
+			.fl-page h1 span {
+				display: block;
+			}
+
+			.fl-page .btn-download {
+				float: none;
+				margin-bottom: 1em;
+			}
+		}
+	</style>
+</head>
+
+<body class="fl-page">
+	<nav>
+		<a href="../index.html" target="_blank">
+			<img src="../img/logo1.jpeg" alt="网站logo" style="width: 50px; height: 50px; margin-right: 10px;">
+		</a>
+		<button class="left-button" id="abo">漫长的季节</button>
+		<button class="left-button" id="rol">人物介绍</button>
+		<button class="left-button" id="line">时间线</button>
+		<button class="left-button" id="det">线索与细节</button>
+		<button class="left-button" id="rev">评价</button>
+		<button class="left-button" id="poem">《漫长的》</button>
+	</nav>
+	<div class="container">
+
+
+		<div class="row">
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<div class="blurb" id="blurb">
+						<h2>隐藏的细节</h2>
+						<p class="teaser">click me!</p>
+						<span class="detail">
+							<p>《漫长的季节》之所以变成一部神作，与严谨的剧情逻辑、真切的细节设计息息相关</p>
+							<p>我们就来看一下这部剧中那些细思极恐的细节吧</p>
+						</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb1"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>首尾呼应</h2>
+					<img src="../img/plot1.jpg" />
+
+				</a>
+				<div class="blurb" id="blurb1">
+
+					<span class="detail">
+
+						<img src="../img/plot1.jpg" style="width: 100%">
+
+						<h2>首尾呼应的巧妙</h2>
+						<p>看完12集的最后一场戏，尤其是范伟饰演的王响开着火车，身边的人讲着同样的台词时，我才终于明白为什么要用这一幕来开篇。</p>
+						<p>同样的一片庄稼地，第1集和大结局，形成了完美的闭环。</p>
+						<p>人生是不断向前的，火车也如此。</p>
+						<p>站在终点的人，回望从起点出发的那一刻，必定百感交集。</p>
+						<p>他希望那个过去的自己能够别那么拧巴，在之后发生的这段故事里就可以少走一些弯路，减少很多痛苦。</p>
+						<p>坦白讲，年轻的王响从他自己的角度来看，就是最幸福的状态。</p>
+						<p>手里端着铁饭碗，家里也有老婆孩子。</p>
+						<p>他没有遗憾，也没有要去弥补的人生。</p>
+						<p>但为什么还要冲着他喊那句“往前看，别回头”？</p>
+						<p>人生之苦，只有尝遍之后才能坦然。</p>
+						<p>得知一切真相的最后，王响解开了自己所有的执念，回到了另一种最幸福的状态。</p>
+						<p>两个不同的最幸福时刻，在首尾重叠的圆圈相遇了。</p>
+						<p>一个是心结产生之前的王响，尚未体会过这种执念的力量。</p>
+						<p> 一个是心结解开过后的王响，将所有的执念都放下并释然。</p>
+						<p>导演用非常巧妙的首尾呼应，给《漫长的季节》拍出了一个最完美的大结局。</p>
+						<p>辛爽不愧是搞音乐出身的，《再回首》这首歌选的恰当好处，起到了画龙点睛的作用。</p>
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb2"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>王阳和王北</h2>
+					<img src="../img/plot2.jpg" />
+
+				</a>
+				<div class="blurb" id="blurb2">
+
+					<span class="detail">
+
+						<img src="../img/plot2.jpg" style="width: 100%">
+
+						<h2>王阳和王北</h2>
+						<p>王北的出现，本身就是为了给王响一个延续生命的意义。</p>
+						<p>加上这部剧本身就是以悬疑为引，主要是讲当时东北的命运，生活在东北里那些人的命运。</p>
+						<p>在中国人眼中“南边为阳”，王响却给新儿子取名叫“王北”。</p>
+						<p>阳与北，是完全相反的概念。</p>
+						<p>所以，这个老父亲也是希望王北能够不要重走王阳的老路，可以健康快乐去追求自己的梦想。</p>
+						<p>喜欢画画，就去考北京的美院。</p>
+						<p>北京很好，王阳也曾经想去外面看一看，但被王响阻止了。
+							身为父亲，他还曾口头承诺过王阳，带他去北京玩一圈。
+							这个承诺后来给了王北，可惜也没兑现。</p>
+						<p>就如王响老婆所说，他们这代人身旁周围都有个圈，只需要按部就班在圈里生活，没人去外面溜达过，连踩线都会害怕。</p>
+						<p>曾经的王响，自然也是这个圈里的人。油条都必须放在盘子里，装塑料袋都不行。所以不要说是儿子去做诗人这种虚无缥缈的事儿，就算找个体制外的工作也会被嫌弃没出息。</p>
+						<p>艺术，摸不到也够不着，太远了。</p>
+						<p>画家与诗人，都属于艺术领域。曾经拒绝了王阳想做诗人的梦想，于是当王北想去考美院时，王响不再纠结，并且强力支持。</p>
+						<p>这也是一种对过去自己的否定，以及积极向前看的决心。</p>
+				</div>
+			</div>
+
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb3"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>泰坦尼克号</h2>
+					<img src="../img/plot3.jpg" />
+
+				</a>
+				<div class="blurb" id="blurb3">
+
+					<span class="detail">
+
+						<img src="../img/plot3.jpg" style="width: 100%">
+
+						<h2>泰坦尼克号</h2>
+						<p>后来王阳被王响逮住，没能赴约。</p>
+						<p>之后，两人在傅卫军的录像厅里看完了全片。</p>
+						<p>《泰坦尼克号》的结局，大家都知道，杰克为了救露丝，牺牲了自己。</p>
+						<p>这不就跟剧里最后一集王阳为救沈墨而死如出一辙了么？</p>
+				</div>
+			</div>
+
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb4"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>泡水车</h2>
+					<img src="../img/plot4.jpg" />
+
+				</a>
+				<div class="blurb" id="blurb4">
+
+					<span class="detail">
+
+						<img src="../img/plot4.jpg" style="width: 100%">
+
+						<h2>泡水车</h2>
+						<p>彪子刚提的车，号称啥问题没有。</p>
+						<p>老司机王响打开引擎盖看了看，说这车“泡过水”。</p>
+						<p>当时看觉得这是王响的经验之谈。</p>
+						<p>但看完第11集彪子连人带车掉进河里后，这更像是精准预言了彪子的结局。</p>
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb5"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>退休金</h2>
+					<img src="../img/plot5.jpg" />
+
+				</a>
+				<div class="blurb" id="blurb5">
+
+					<span class="detail">
+
+						<img src="../img/plot5.jpg" style="width: 100%">
+
+						<h2>退休金</h2>
+						<p>赵主任叫嚣着“磅房人员第一批下岗”，巧云一怒之下用花瓶砸了赵主任的头。</p>
+						<p>赵主任回来后，就开始找茬了。</p>
+						<p>在有限的权力下，欺压底层人。就是这傻缺主任干的事儿！</p>
+						<p>所以巧云无法正常退休，去申请的时候总是因为缺一个章而被卡住。</p>
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb6"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>一碗水捞饭</h2>
+					<img src="../img/plot6.jpg">
+
+				</a>
+				<div class="blurb" id="blurb6">
+
+					<span class="detail">
+
+						<img src="../img/plot6.jpg" style="width: 100%">
+
+						<h2>一碗水捞饭</h2>
+						<p>一家三口吃饭的时候，王阳吃不下油条，只想喝一碗凉快的水捞饭！</p>
+						<p>为此王响吐槽：多大的火？都入秋了还吃凉快的！ </p>
+						<p>其实，王阳确实火大，中暑都不意外！因为在这前一天，王阳刚把港商丢进了锅炉！</p>
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="#blurb7"
+					style="height: 160px; background-color: rgb(214, 195, 140);">
+					<h2>营运照</h2>
+					<img src="../img/plot7.jpg">
+
+				</a>
+				<div class="blurb" id="blurb7">
+
+					<span class="detail">
+
+						<img src="../img/plot7.jpg" style="width: 100%">
+
+						<h2>营运照</h2>
+						<p>彪子的剧情从运营照开始，也从这张照片结束。他最大的愿望就是买一辆属于自己的车。但是现实却让他头破血流。</p>
+						<p>先是被套牌，再是老婆丽茹的医疗事故，最后车还没来得及卖掉，就进了河。 </p>
+						<p>营运照成了遗像。而这辆车，一天也没有营运过。所以他只有在剧头和剧尾是真心高兴的。</p>
+						<p>生活像一团乱麻，只有这两个短暂的时间段，他没有烦恼，享受着这辆车带来的纯粹快乐。</p>
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="../img/photo1.jpg"
+					style="height: 160px;background-color: rgb(214, 195, 140);"><img src="../img/photo1.jpg"
+						style="height: 100%"></a>
+			</div>
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="../img/photo2.jpg"
+					style="height: 160px;background-color: rgb(214, 195, 140);"><img src="../img/photo2.jpg"
+						style="height: 100%"></a>
+			</div>
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="../img/photo3.jpg"
+					style="height: 160px;background-color: rgb(214, 195, 140);"><img src="../img/photo3.jpg"
+						style="height: 100%"></a>
+			</div>
+			<div class="col-lg-2">
+				<a class="thumbnail gallery2" href="../img/photo4.jpg"
+					style="height: 160px;background-color: rgb(214, 195, 140);"><img src="../img/photo4.jpg"
+						style="height: 100%"></a>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+	<script src="js/jquery-1.7.0.min.js"></script>
+	<script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+		$(document).ready(function () {
+			$('.gallery').featherlightGallery({
+				gallery: {
+					fadeIn: 300,
+					fadeOut: 300
+				},
+				openSpeed: 300,
+				closeSpeed: 300
+			});
+			$('.gallery2').featherlightGallery({
+				gallery: {
+					next: 'next »',
+					previous: '« previous'
+				},
+				variant: 'featherlight-gallery2'
+			});
+		});
+
+
+	</script>
+	<script>
+		var button = document.getElementById('abo');
+		button.addEventListener('click', function () { window.location.href = 'about.html'; });
+	</script>
+	<script>
+		var button = document.getElementById('rol');
+		button.addEventListener('click', function () { window.location.href = 'roles.html'; });
+	</script>
+	<script>
+		var button = document.getElementById('line');
+		button.addEventListener('click', function () { window.location.href = 'timeline.html'; });
+	</script>
+	<script>
+		var button = document.getElementById('det');
+		button.addEventListener('click', function () { window.location.href = 'details.html'; });
+	</script>
+	<script>
+		var button = document.getElementById('rev');
+		button.addEventListener('click', function () { window.location.href = 'reviews.html'; });
+	</script>
+	<script>
+		var button = document.getElementById('poem');
+		button.addEventListener('click', function () { window.location.href = 'poem.html'; });
+	</script>
+	<script>
+		var button = document.getElementById('pro');
+		button.addEventListener('click', function () { window.location.href = 'products.html'; });
+	</script>
+</body>
+
+</html>

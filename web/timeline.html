@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="css/about.css">
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-image: url('../img/poster.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+
+		}
+
+		.page {
+			width: 100%;
+			background: #F0F0F0 url('img/dian2.png') repeat-x;
+		}
+	</style>
+
+	<style>
+		footer {
+			background-color: #6193b1;
+			color: #ffffff;
+			text-align: center;
+			padding: 10px 0;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+		}
+
+		.image-popup {
+			position: absolute;
+			background-color: white;
+			padding: 0px;
+			width: 50%;
+			height: 30%;
+			top: 60%;
+			left: 25%;
+			border: 1px solid gray;
+			box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+			z-index: 1000;
+			max-width: 600px;
+			/* 可根据需求调整图片框最大宽度 */
+			max-height: 600px;
+			/* 可根据需求调整图片框最大高度 */
+			display: flex;
+			justify-content: 300px;
+			align-items: 300px;
+		}
+
+		.image-popup img {
+			width: 50%;
+			height: 30%;
+			top: 60%;
+			left: 25%;
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+			/* 保持图片比例并适应框大小 */
+		}
+	</style>
+
+	<title>timeline</title>
+
+</head>
+
+<body>
+
+
+
+	<div class="box">
+
+		<ul class="event_year">
+
+			<li class="current"><label for="2013">背景</label></li>
+
+			<li><label for="1997" class="time-part" data-image-url="timeline/1997.png">1997</label></li>
+
+			<li><label for="2007" class="time-part" data-image-url="timeline/1998.png">1998</label></li>
+
+			<li><label for="2006">2016</label></li>
+
+			<li><label for="2005">2017</label></li>
+			<a href="../index.html" target="_blank">
+				<li><label for="back" window.location.href="../index.html">主页</label></li>
+			</a>
+		</ul>
+
+		<ul class="event_list">
+			<div>
+				<h3 id="2013">背景</h3>
+				<li>
+					<span>1952年</span>
+					<p><span>王响出生</span></p>
+				</li>
+				<li>
+					<span>1969年</span>
+					<p><span class="time-part" data-image-url="timeline/A0.png">王响接替父亲进入桦林</span></p>
+				</li>
+
+				<li>
+					<span>1979年</span>
+					<p><span>王阳、沈默出生</span></p>
+				</li>
+				<li>
+					<span>1987年</span>
+					<p><span>沈默父母因工厂事故离世，沈默由沈栋梁扶养；傅卫军因聋哑被沈栋梁嫌弃后，并被进福利院</span></p>
+				</li>
+				<li>
+					<span>--</span>
+					<p><span>傅卫军的领养家庭迎来新的孩子，于是他又被领养家庭抛弃</span></p>
+				</li>
+			</div>
+
+
+			<div>
+
+				<h3 id="1997">1997</h3>
+				<li><span>9月1日 星期一 前</span>
+					<p><span class="time-part" data-image-url="../img/1.png">傅卫军和隋东偷包打架</span></p>
+				</li>
+				<li><span>9月1日 星期一</span>
+					<p><span class="time-part" data-image-url="../img/A6.png">桦医开学，沈默进入桦医学习，并结识王阳</span></p>
+				</li>
+				<li><span>9月1日 星期一 后</span>
+					<p><span class="time-part" data-image-url="../img/C0.png">沈默进入进入维多利亚弹琴勤工俭学</span></p>
+				</li>
+				<li><span>10月6日 星期一</span>
+					<p><span class="time-part" data-image-url="../img/E1.png">王阳进入维多利亚打工</span></p>
+				</li>
+				<li><span>10月6日 星期一</span>
+					<p><span class="time-part" data-image-url="../img/E3.png">沈墨被“纤夫哥”无端挑衅</span></p>
+				</li>
+				<li><span>10月8日 星期三</span>
+					<p><span class="time-part" data-image-url="../img/E2.png">海哥被傅卫军暴打</span></p>
+				</li>
+				<li><span>10月8日 星期三</span>
+					<p><span class="time-part" data-image-url="../img/E4.png">王阳给沈墨撑伞 在教务处检查</span></p>
+				</li>
+				<li><span>10月19日 星期三</span>
+					<p><span>邢建春、刘全力等倒卖工厂物资被王响发现</span></p>
+				</li>
+				<li><span>10月24日 星期五</span>
+					<p><span>黄毛衣 合辙押韵 选进厂 修吸油烟机 老葛品肉 看烟火 约看火车头</span></p>
+				</li>
+				<li><span>10月24日 星期六</span>
+					<p><span>王阳在火车道向沈墨读他所作的诗歌</span></p>
+				</li>
+				<li><span>10月26日 星期日</span>
+					<p><span>邢三为了报复把老鼠挂挂在王响家门上</span></p>
+				</li>
+				<li><span>10月29日 星期三</span>
+					<p><span>送伞</span></p>
+				</li>
+				<li><span>10月30日 星期四</span>
+					<p><span>王阳请假 被王响抓回家</span></p>
+				</li>
+				<li><span>11月2日 星期日</span>
+					<p><span>王响试红儿子送的红毛衣 罗美素提送礼</span></p>
+				</li>
+				<li><span>11月8日 星期六</span>
+					<p><span>王响给儿子做了几个硬菜 夫妻俩定下来给厂长送酒</span></p>
+				</li>
+				<li><span>11月10日 星期一</span>
+					<p><span>王响去给厂长送酒 结果撞到厂长在偷情</span></p>
+				</li>
+
+			</div>
+
+
+
+
+
+			<div>
+
+				<h3 id="2007">1998</h3>
+				<li><span>04 月 19 日星期日</span>
+					<p><span>家长到来</span></p>
+				</li>
+				<li><span>04 月 19 日星期日</span>
+					<p><span>饭店相关事宜</span></p>
+				</li>
+				<li><span>04 月 19 日星期日</span>
+					<p><span>招待所相关事宜</span></p>
+				</li>
+				<li><span>04 月 19 日星期日</span>
+					<p><span>涉及“小星星”</span></p>
+				</li>
+				<li><span>04 月 20 日星期一</span>
+					<p><span>21：30 送票</span></p>
+				</li>
+				<li><span>04 月 20 日星期一</span>
+					<p><span>晚送裙</span></p>
+				</li>
+				<li><span>04 月 20 日星期一</span>
+					<p><span>彩蛋，馄饨初见</span></p>
+				</li>
+				<li><span>04 月 20 日星期一</span>
+					<p><span>夜生日</span></p>
+				</li>
+				<li><span>04 月 21 日星期二</span>
+					<p><span>下午试衣服</span></p>
+				</li>
+				<li><span>04 月 21 日星期二</span>
+					<p><span>泰坦尼克相关事件</span></p>
+				</li>
+				<li><span>04 月 21 日星期二</span>
+					<p><span>被抓</span></p>
+				</li>
+				<li><span>04 月 22 日星期三</span>
+					<p><span>沈栋梁威胁老葛</span></p>
+				</li>
+				<li><span>04 月 22 日星期三</span>
+					<p><span>王阳沈栋梁会面</span></p>
+				</li>
+				<li><span>04 月 22 日星期三</span>
+					<p><span>打电话约见面</span></p>
+				</li>
+				<li><span>04 月 22 日星期三</span>
+					<p><span>表白</span></p>
+				</li>
+				<li><span>04 月 22 日星期三</span>
+					<p><span>跳河</span></p>
+				</li>
+				<li><span>04 月 22 日星期三</span>
+					<p><span>鼓励反抗</span></p>
+				</li>
+				<li><span>04 月 23 日星期四</span>
+					<p><span>出去</span></p>
+				</li>
+				<li><span>04 月 24 日星期五</span>
+					<p><span>沈墨课上收传呼</span></p>
+				</li>
+				<li><span>04 月 24 日星期五</span>
+					<p><span>下午到松河</span></p>
+				</li>
+				<li><span>04 月 24 日星期五</span>
+					<p><span>游戏厅遇沈辉</span></p>
+				</li>
+				<li><span>04 月 24 日星期五</span>
+					<p><span>晚致残</span></p>
+				</li>
+				<li><span>04 月 25 日星期六</span>
+					<p><span>摆脱沈栋梁</span></p>
+				</li>
+				<li><span>04 月 25 日星期六</span>
+					<p><span>约 20:00 推门</span></p>
+				</li>
+				<li><span>04 月 25 日星期六</span>
+					<p><span>介绍</span></p>
+				</li>
+				<li><span>04 月 25 日星期六</span>
+					<p><span>第一次牵手</span></p>
+				</li>
+				<li><span>04 月 27 日星期一</span>
+					<p><span>沈墨重回弹琴下班</span></p>
+				</li>
+				<li><span>04 月 27 日星期一</span>
+					<p><span>王阳挥手告别 （粤语跳舞街）</span></p>
+				</li>
+				<li><span>04 月 29 日星期三</span>
+					<p><span>20:30 “劳” 交易</span></p>
+				</li>
+				<li><span>04 月 29 日星期三</span>
+					<p><span>散场</span></p>
+				</li>
+				<li><span>04 月 29 日星期三</span>
+					<p><span>卢第一次见沈墨送花篮</span></p>
+				</li>
+				<li><span>05 月 02 日星期六</span>
+					<p><span>13:55 送饭</span></p>
+				</li>
+				<li><span>05 月 02 日星期六</span>
+					<p><span>诬陷 （开票）</span></p>
+				</li>
+				<li><span>05 月 03 日星期日</span>
+					<p><span>王响宋钰坤谈话</span></p>
+				</li>
+				<li><span>05 月 03 日星期日</span>
+					<p><span>遇黄丽茹</span></p>
+				</li>
+				<li><span>05 月 03 日星期日</span>
+					<p><span>21:30 圈子谈话</span></p>
+				</li>
+				<li><span>08 月 16 日星期日</span>
+					<p><span>沈墨上班</span></p>
+				</li>
+				<li><span>08 月 16 日星期日</span>
+					<p><span>卢送花篮</span></p>
+				</li>
+				<li><span>08 月 17 日星期一</span>
+					<p><span>殷红挡酒 （卢送花篮）</span></p>
+				</li>
+				<li><span>08 月 17 日星期一</span>
+					<p><span>带醉酒殷红回皇朝再见傅卫军</span></p>
+				</li>
+				<li><span>08 月 18 日星期二</span>
+					<p><span>早戴发箍，道别</span></p>
+				</li>
+				<li><span>08 月 18 日星期二</span>
+					<p><span>晚卢文仲错认殷红，少女的叹息</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>早交朋友</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>退香水</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>晚沈墨上班</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>晚卢送花篮</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>发现香水不唯一</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>送发夹</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>进 888</span></p>
+				</li>
+				<li><span>08 月 19 日星期三</span>
+					<p><span>唱小星星</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>早裸照</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>保卫处交代</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>午王阳询问</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>回寝室</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>晚 19:30 殷红请饭</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>下药迷晕</span></p>
+				</li>
+				<li><span>08 月 20 日星期四</span>
+					<p><span>20:50 离开</span></p>
+				</li>
+				<li><span>08 月 23 日星期日</span>
+					<p><span>510 - 68 - 32 - 85 = 325 辞职</span></p>
+				</li>
+				<li><span>08 月 23 日星期日</span>
+					<p><span>殷红沈墨冲突</span></p>
+				</li>
+				<li><span>08 月 23 日星期日</span>
+					<p><span>挑衅</span></p>
+				</li>
+				<li><span>08 月 23 日星期日</span>
+					<p><span>小峰寻仇</span></p>
+				</li>
+				<li><span>08 月 23 日星期日</span>
+					<p><span>王阳意外知情，被辞</span></p>
+				</li>
+				<li><span>08 月 23 日星期日</span>
+					<p><span>倒霉的应该是他们</span></p>
+				</li>
+				<li><span>09 月 04 日星期五</span>
+					<p><span>晚 KTV</span></p>
+				</li>
+				<li><span>09 月 04 日星期五</span>
+					<p><span>卢接到邀约电话</span></p>
+				</li>
+				<li><span>09 月 04 日星期五</span>
+					<p><span>桦医门口接沈墨</span></p>
+				</li>
+				<li><span>09 月 04 日星期五</span>
+					<p><span>皇朝录像厅</span></p>
+				</li>
+				<li><span>09 月 04 日星期五</span>
+					<p><span>动物，制服</span></p>
+				</li>
+				<li><span>09 月 05 日星期六</span>
+					<p><span>凌晨最后一通电话</span></p>
+				</li>
+				<li><span>09 月 05 日星期六</span>
+					<p><span>取汇票</span></p>
+				</li>
+				<li><span>09 月 05 日星期六</span>
+					<p><span>杀港商</span></p>
+				</li>
+				<li><span>09 月 05 日星期六</span>
+					<p><span>晚烧车，焚尸</span></p>
+				</li>
+				<li><span>09 月 19 日星期六</span>
+					<p><span>第一次拥抱</span></p>
+				</li>
+				<li><span>09 月 19 日星期六</span>
+					<p><span>分别</span></p>
+				</li>
+				<li><span>09 月 20 日星期日</span>
+					<p><span>杀殷红</span></p>
+				</li>
+				<li><span>09 月 20 日星期日</span>
+					<p><span>剁小指</span></p>
+				</li>
+				<li><span>09 月 24 日星期四</span>
+					<p><span class="time-part" data-image-url="timeline/C1.png">罗美素取药，紫头绳</span></p>
+				</li>
+				<li><span>09 月 24 日星期四</span>
+					<p><span class="time-part" data-image-url="timeline/C3.png">曲波找王阳，查寝</span></p>
+				</li>
+
+				<li><span>09月25日 星期五</span>
+					<p><span>傅卫军抛尸</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/A1.png">工人因港商失踪闹事，马德胜被打</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/A2.png">王响呵斥孙贵兰</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/.png">孙贵兰捡尸袋，傅卫军抛易拉罐</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/A3.png">王响一家吃饭</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/A4.png">报警，王响热心介绍情况，被吓吐</span></p>
+				</li>
+
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/A5.png">王响，被救护车送医院，龚彪初见丽茹</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/C4.png">晚警局第一次开会</span></p>
+				</li>
+				<li><span>09月25日 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/C2.png">王响在医院打针，龚彪再遇丽茹</span></p>
+				</li>
+				<li><span>09.28 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">沈栋梁认尸</span></p>
+				</li>
+				<li><span>09.28 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/C5.png">厂里开会，龚彪给厂长加水，厂办交下岗名单</span></p>
+				</li>
+				<li><span>09.29 星期二</span>
+					<p><span class="time-part" data-image-url="timeline/C6.png">厂长到医院探访王响</span></p>
+				</li>
+				<li><span>10.04 星期日</span>
+					<p><span class="time-part" data-image-url="timeline/C7.png">巧云砸赵广洲</span></p>
+				</li>
+				<li><span>10.04 星期日</span>
+					<p><span class="time-part" data-image-url="timeline/C9.png">16:40 本月考勤表 保健本盖章 偷看名单</span></p>
+				</li>
+				<li><span>10.04 星期日</span>
+					<p><span class="time-part" data-image-url="timeline/.png">（李巧云离厂）</span></p>
+				</li>
+				<li><span>10.05 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">（中秋节）</span></p>
+				</li>
+				<li><span>10.23 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/C8.png">桦钢报</span></p>
+				</li>
+				<li><span>10.26 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/C10.png">龚彪报信，告知王师傅他即将下岗</span></p>
+				</li>
+				<li><span>11.01 星期日</span>
+					<p><span class="time-part" data-image-url="timeline/E6.png">徐姐第二包 阳台对聊 偷轮胎 绊隋东 赠衣服</span></p>
+				</li>
+				<li><span>11.07 星期六</span>
+					<p><span class="time-part" data-image-url="timeline/F0.png">仙儿跳大神</span></p>
+				</li>
+				<li><span>11.07 星期六</span>
+					<p><span class="time-part" data-image-url="timeline/F1.png">王响还衣服 一起分析抛尸时间 马德胜被叫走</span></p>
+				</li>
+				<li><span>11.07 星期六</span>
+					<p><span class="time-part" data-image-url="timeline/F2.png">17:40龚彪丽茹看电影</span></p>
+				</li>
+				<li><span>11.07 星期六</span>
+					<p><span class="time-part" data-image-url="timeline/.png">凉搜的 罗美素煎蛋 夫妻俩谈话</span></p>
+				</li>
+				<li><span>11.12 星期四</span>
+					<p><span class="time-part" data-image-url="timeline/.png">小凉河发现第3、4包 人被调走</span></p>
+				</li>
+				<li><span>11.12 星期四</span>
+					<p><span class="time-part" data-image-url="timeline/.png">14:10要人 朱局提内外 拿茶</span></p>
+				</li>
+				<li><span>11.12 星期四</span>
+					<p><span class="time-part" data-image-url="timeline/.png">18:35吃包子 画图分析</span></p>
+				</li>
+				<li><span>11.13 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/.png">午饭前 找地图 13:00-14：00保卫科开会 布控</span></p>
+				</li>
+				<li><span>11.13 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/.png">龚彪还酒</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">（11.15王响画排查点）排污管发现第五包 饭卡</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">桦医调查</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">王响龚彪厂内排查</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">审问王阳 14:20 信任破裂 回家半路王阳跑了</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span class="time-part" data-image-url="timeline/.png">辨认照片 开会 去松河</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span>22:35 发现血衣</span></p>
+				</li>
+				<li><span>11.16 星期一</span>
+					<p><span>曲波带路 录像厅抓回王阳</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>王响查皇朝</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>早9点前 带证物去警局遇开会</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>放王阳 09:30 最后一顿水捞饭</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>最后一顿饺子 取汇票被抓 王阳去桥</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>中午前 马队家访</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>13:25 王响回家 呼马队</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>马队打沈栋梁</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>王响找龚彪帮忙 拿装备</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>17:55丽茹找龚彪</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>遇沈墨被电晕</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>桥上重逢</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>21:30 龚彪去等王响</span></p>
+				</li>
+				<li><span>11.17 星期二</span>
+					<p><span>23:05王响回家 安慰承诺 孩子吃凉饭了</span></p>
+				</li>
+				<li><span>11.18 星期三</span>
+					<p><span>擦零件 色挺正 听实情 职工大会 倒水砸厂长 挨打 杂碎！ 丽茹意外 14:20纪委</span></p>
+				</li>
+				<li><span>11.18 星期三</span>
+					<p><span>王阳找着了</span></p>
+				</li>
+				<li><span>11.18 星期三</span>
+					<p><span>彩蛋 龚彪送丽茹花 买的</span></p>
+				</li>
+				<li><span>11.19 星期四</span>
+					<p><span>13:00李群装逼 马队脱衣</span></p>
+				</li>
+				<li><span>11.23 星期一</span>
+					<p><span>10:43 白事 马队吊唁</span></p>
+				</li>
+				<li><span>11.23 星期一</span>
+					<p><span>13:20 罗美素自杀</span></p>
+				</li>
+				<li><span>11.23 星期一</span>
+					<p><span>销户 宜 安葬 入殓 移柩 立碑</span></p>
+				</li>
+				<li><span>11.24 星期二</span>
+					<p><span>王响自杀 捡王北 宜收养子女</span></p>
+				</li>
+
+			</div>
+
+
+
+			<div>
+
+				<h3 id="2006">2016</h3>
+
+				<li><span>10.19 星期三</span>
+					<p><span class="time-part" data-image-url="timeline/B0.png">田边方便-上车</span></p>
+				</li>
+				<li><span>10.19 星期三</span>
+					<p><span class="time-part" data-image-url="timeline/B1.png">徐姐美容 龚彪喂鸽子（我省进入气象学秋天）</span></p>
+				</li>
+				<li><span>10.20 星期四</span>
+					<p><span class="time-part"
+							data-image-url="timeline/B2.png">司机之家就餐-验车-接到交警队电话-看录像-查车-医院套话-晚上烤肉-摇人</span></p>
+				</li>
+				<li><span>10.21 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/B3.png">寻车</span></p>
+				</li>
+				<li><span>10.21 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/B4.png">加油站电话-分开</span></p>
+				</li>
+				<li><span>10.21 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/B5.png">破钱 王北出场 来电话 车找到了</span></p>
+				</li>
+				<li><span>10.21 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/B7.png">修车场套话-飙车-追丢</span></p>
+				</li>
+				<li><span>10.21 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/B8.png">王响按摩</span></p>
+				</li>
+				<li><span>10.21 星期五</span>
+					<p><span class="time-part" data-image-url="timeline/B9.png">龚彪吹牛 小露卖药 照片实锤11:00一桌好饭</span></p>
+				</li>
+				<li><span>10.22 星期六</span>
+					<p><span class="time-part" data-image-url="timeline/D0.png">药店谋划 送药 追人 触电</span></p>
+				</li>
+				<li><span>10.22 星期六</span>
+					<p><span class="time-part" data-image-url="timeline/D1.png">晚 王响面对遗像</span></p>
+				</li>
+				<li><span>10.23 星期日</span>
+					<p><span class="time-part" data-image-url="timeline/D2.png">提买新衣 换票26-31 早饭</span></p>
+				</li>
+				<li><span>10.23 星期日</span>
+					<p><span>早 医嘱icu押金 回家</span></p>
+				</li>
+				<li><span>10.23 星期日</span>
+					<p><span>早 电话借钱 坦诚买车 借钱闹崩 换衣服上分</span></p>
+				</li>
+				<li><span>10.23 星期日</span>
+					<p><span>查触电 得剪子（去医院找龚彪没找到 交押金）</span></p>
+				</li>
+				<li><span>10.24 星期一</span>
+					<p><span>找龚彪遇丽茹下郝哥车-游戏厅上分-被抓-警局遇王立-巧云王北接-找马队</span></p>
+				</li>
+				<li><span>10.24 星期一</span>
+					<p><span>晓丽包子铺吃包子 16:30找小崔 车管所遇邢三 蹲守 接小李 散伙</span></p>
+				</li>
+				<li><span>10.25 星期二</span>
+					<p><span>凌晨 阳儿~阳儿~阳~~~~儿</span></p>
+				</li>
+				<li><span>10.25 星期二</span>
+					<p><span>06:30 量血压 钓鱼执法 回家幻觉</span></p>
+				</li>
+				<li><span>10.25 星期二</span>
+					<p><span>中午 洗车 红毛衣 卤蛋 不去了 早回家</span></p>
+				</li>
+				<li><span>10.25 星期二</span>
+					<p><span>下午 邢三上门供述 画像 饯行 阳~北~</span></p>
+				</li>
+				<li><span>10.26 星期三</span>
+					<p><span>上午（送王北）蹲守 彩票 沈辉落网 争吵</span></p>
+				</li>
+				<li><span>10.27 星期四</span>
+					<p><span class="time-part" data-image-url="timeline/D6.png">龚彪看望出icu还未清醒的胡雪露</span></p>
+				</li>
+				<li><span>10.27 星期四</span>
+					<p><span>收车 徐姐讹诈</span></p>
+				</li>
+				<li><span>10.27 星期四</span>
+					<p><span>卖车</span></p>
+				</li>
+				<li><span>10.27 星期四</span>
+					<p><span>分居21:30马队带来傅卫军死讯</span></p>
+				</li>
+				<li><span>10.31 星期一</span>
+					<p><span>晚 车管所遇沈栋梁 约李群 定去殡仪馆</span></p>
+				</li>
+				<li><span>11.01 星期二</span>
+					<p><span>办退休 可爱多 打听傅卫军</span></p>
+				</li>
+				<li><span>11.01 星期二</span>
+					<p><span>殡仪馆调查骨灰盒 午 门口查357F</span></p>
+				</li>
+				<li><span>11.01 星期二</span>
+					<p><span>午饭后 运动请罪 修水管 案发现场 （彩蛋 11.01带骨灰去松河） 晚 警局 别捣乱 散伙</span></p>
+				</li>
+				<li><span>11.01 星期二</span>
+					<p><span>18:50 打扮</span></p>
+				</li>
+				<li><span>11.01 星期二</span>
+					<p><span>20:46吴老师来访</span></p>
+				</li>
+				<li><span>11.01 星期二</span>
+					<p><span>开外挂喂案情</span></p>
+				</li>
+				<li><span>11.02 星期三</span>
+					<p><span>买花 三人行 （安葬傅卫军）</span></p>
+				</li>
+				<li><span>11.02 星期三</span>
+					<p><span>见郝哥 离婚</span></p>
+				</li>
+				<li><span>11.02 星期三</span>
+					<p><span>狂欢</span></p>
+				</li>
+				<li><span>11.03 星期四</span>
+					<p><span>中风 车祸 （回桦林）</span></p>
+				</li>
+				<li><span>11.04 星期五</span>
+					<p><span>龚彪后事（宜 安葬 入殓 移柩 立碑 破土 迁坟）</span></p>
+				</li>
+				<li><span>11.07 星期一 立冬</span>
+					<p><span>实际5号马队清醒剃头破案 杀赵静诉实情</span></p>
+				</li>
+				<li><span>11.07 星期一 立冬</span>
+					<p><span>雪（实际5号 但希望立冬）</span></p>
+				</li>
+
+			</div>
+
+
+
+
+
+			<div>
+
+				<h3 id="2005">2017</h3>
+				<li><span>08.26 星期六</span>
+					<p><span>读诗 进京 再回首</span></p>
+				</li>
+
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</ul>
+
+
+
+		<div class="clearfix"></div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+	<footer>
+		<h3>备注</h3>
+		<p>1.本页面为《漫长的季节（The Long Season）》的时间线梳理。如果您不了解这部剧，可能会对上述内容感到疑惑，请仅将其看作剧中的情节</p>
+		<p>2.您可通过点击左边栏上的年份，直接跳转到右面的对应位置</p>
+		<p>3.当您将光标移至某些年份和事件上时，屏幕下方会出现相应的剧照，但由于文件大小限制，仅有“1997年“的部分事件添加了这一功能</p>
+	</footer>
+
+	<script src="js/jquery.min_v1.0.js" type="text/javascript"></script>
+	<script src="js/picture.js"></script>
+
+	<script>
+
+		$(function () {
+
+			$('label').click(function () {
+
+				$('.event_year>li').removeClass('current');
+
+				$(this).parent('li').addClass('current');
+
+				var year = $(this).attr('for');
+
+				$('#' + year).parent().prevAll('div').slideUp(800);
+
+				$('#' + year).parent().slideDown(800).nextAll('div').slideDown(800);
+
+			});
+
+		});
+
+	</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>人物介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../img/poster.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #aeada5a8;
+        }
+
+        header {
+            background-color: rgb(184, 204, 216, 0.5);
+            color: #2f3c46;
+            padding: 10px 0;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+
+
+
+        img.poster {
+            max-width: 200%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: rgba(135, 187, 219, 0.7);
+            color: #000000
+        }
+
+        footer {
+            background-color: #6193b1;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .center-image-flex {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            height: 400px;
+            /* 定义容器的高度 */
+        }
+
+        .circular-image {
+            border-radius: 50%;
+            /* 设置为50%使图片变为圆形 */
+            width: 150px;
+            /* 设置图片宽度 */
+            height: 150px;
+            /* 设置图片高度，保持宽高比 */
+            object-fit: cover;
+            /* 保持图片内容的覆盖 */
+            margin-top: 50px;
+        }
+
+        .stylish-button {
+
+            padding: 10px 20px;
+            /* 按钮内边距 */
+            font-size: 16px;
+            /* 文字大小 */
+            color: rgb(251, 255, 237);
+            /* 文字颜色 */
+            background-color: rgb(79, 142, 187, 0.9);
+            /* 背景颜色 */
+            border: none;
+            /* 无边框 */
+            border-radius: 10px;
+            /* 圆角边框 */
+            cursor: pointer;
+            /* 鼠标悬停时显示指针 */
+            transition: background-color 0.3s;
+            /* 背景颜色渐变效果 */
+        }
+
+        /* 鼠标悬停时的样式 */
+        .stylish-button:hover {
+            background-color: #aeb489;
+            /* 鼠标悬停时的背景颜色 */
+        }
+
+        .italic-text {
+            font-style: italic;
+            /* 设置字体为斜体 */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .left-button:hover {
+            background-color: #70764a;
+            /* 鼠标悬停时的背景颜色 */
+        }
+
+        .left-button {
+            /* display: flex; */
+            /* justify-content: flex-end; */
+            padding: 10px 20px;
+            /* 按钮内边距 */
+            font-size: 16px;
+            /* 文字大小 */
+            color: rgb(255, 255, 255);
+            /* 文字颜色 */
+            background-color: #4779af;
+            /* 背景颜色 */
+            border: none;
+            /* 无边框 */
+            cursor: pointer;
+            /* 鼠标悬停时显示指针 */
+            transition: background-color 0.3s;
+            /* 背景颜色渐变效果 */
+        }
+
+        nav {
+            background-color: #4779af;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            column-count: 4;
+            column-gap: 1em;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto 20px;
+            padding: 0 20px;
+            position: relative;
+        }
+    </style>
+    <script src="js/background.js"></script>
+</head>
+
+
+
+<body>
+
+    <nav>
+        <a href="../index.html" target="_blank">
+            <img src="../img/logo1.jpeg" alt="网站logo" style="width: 50px; height: 50px; margin-right: 10px;">
+        </a>
+        <button class="left-button" id="abo">漫长的季节</button>
+        <button class="left-button" id="rol">人物介绍</button>
+        <button class="left-button" id="line">时间线</button>
+        <button class="left-button" id="det">线索与细节</button>
+        <button class="left-button" id="rev">评价</button>
+        <button class="left-button" id="poem">《漫长的》</button>
+    </nav>
+
+
+    <img src="../img/role-main.png" alt="示例图片" width="1349" class="poster">
+    <header>
+        <h1>人物介绍</h1>
+    </header>
+
+    <div class="wang-xiang">
+        <section style="display: flex; margin-bottom: 20px;">
+            <img src="../img/wangxiang.jpg" alt="王响头像" style="width: 330px; height: 440px; margin-right: 20px;">
+            <div>
+                <h2>范伟 饰 王响</h2>
+                <p class="italic-text">我叫王响，<b>响亮</b>的响</p>
+                <p class="italic-text">这个秋天咋这么长呢，想过了一辈子似的</p>
+                <p class="italic-text">打个响指吧，吹起小喇叭，嗒嘀嗒嘀嗒</p>
+                <div style="text-align: left;">
+                    <p>王响是一位执着且有责任感的人物。他在生活中遭遇了诸多困境，如工作上的危机以及家庭的变故等。</p>
+                    <p>但他始终没有放弃对真相的追寻，无论是在处理儿子王阳的事情上，还是在面对桦钢相关的复杂局面时，
+                        都体现出了他坚韧不拔的性格。他的故事反映了那个时代背景下普通人的挣扎与奋斗，以及对正义和家庭的坚守。</p>
+                    <p>也许这就是父亲吧，无论他曾经有多严苛不近人情，但是在王响心里，儿子就是他全部的精神支柱，自从儿子离世之后，
+                        他的人生没有了四季，只剩下漫长而绝望的秋天，萧索而死寂的秋天。</p>
+                    <p>这些年来，无论是下岗失业，还是其它挫折，王响都可以泰然处之，毕竟开出租也能讨一份生活，只要咬咬牙就能挺过去。</p>
+                    <p>但是儿子的死却不是这样——无论他怎么努力，儿子都不可能再活过来了。</p>
+                    <p>对王响来说，调查王阳之死的真相，是王响内心坚定的执拗，是坚决不向生活妥协的最后执着。</p>
+                    <p><b>而这执念，全都缘故一个老父亲对儿子不变的爱。</b></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wang-yang">
+        <section style="display: flex; margin-bottom: 20px;">
+            <img src="../img/wangyang.jpg" alt="王阳头像" style="width: 330px; height: 440px; margin-right: 20px;">
+            <div>
+                <h2>刘奕铁 饰 王阳</h2>
+
+                <p class="italic-text">我叫王阳，太阳的阳</p>
+                <p class="italic-text">打个响指吧,他说。我们打个共鸣的响指。遥远的事物将被震碎。面前的人们此时尚不知情……</p>
+                <p class="italic-text">我们三个应该是世界上最倒霉的人了吧？</p>
+                <div style="text-align: left;">
+                    <p>父母健在，有父母照顾起居饮食，有父母庇护，有父母关心安排他的学业工作前途。</p>
+                    <p>王阳是典型的青春期发疯的孩子，被母亲宠坏，对父母一辈子憋在一个厂和厂死磕，极度看不起，觉得天大地大，他最大，天空海阔任他闯。</p>
+                    <p>他嘲笑他爸从来不在三十公里外的小镇车站下车，从不抓住机会去看北京上海广州。</p>
+                    <p>但只有生活无忧无虑、父母宠爱，为他遮风挡雨，他自由自在，他才能静得下心来写诗。</p>
+                    <p>王阳身上，有她梦寐以求的生活。</p>
+                    <p>他非理性的爱上了沈默，然后逐渐理性的审视了这段感情。但即便如此，仍没有影响他一跃而下，用生命去挽救那个他曾以为的挚爱。</p>
+                    <p>这种从“幼稚到成熟，成熟后仍义无反顾”的浪漫主义气质，虽具有是悲剧性和非理性，但它更是一脉相承的，是时代背景下个体价值观的最美绽放。</p>
+                    <p><b>人性最大的光辉不是获得多少，而是为了心中的理想信念敢于放弃一切。</b></p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="gong-biao">
+        <section style="display: flex; margin-bottom: 20px;">
+            <img src="../img/gongbiao.jpg" alt="龚彪头像" style="width: 330px; height: 440px; margin-right: 20px;">
+            <div>
+                <h2>秦昊 饰 龚彪</h2>
+
+                <p class="italic-text">-<b>彪子你太爱学习了。</b>-习惯了，用知识武装自己。</p>
+                <p class="italic-text">-多大屁股啊用这么多纸？-耽误你擦嘴了咋地。</p>
+                <p class="italic-text">消毒水儿味，从小就爱闻，一闻心里贼有安全感，踏实。</p>
+                <div style="text-align: left;">
+                    <p>“二呵呵的”龚彪，90年代的大学生，工作没了，媳妇跑了，胰岛素续命，确实只能靠中彩票翻身了。</p>
+                    <p>但王响要放弃时，他还鼓励说：“我不信命，活就活得乐呵的。”</p>
+                    <p>没想到，当坠江那一刻，命运给他开了个大玩笑，彻底把他逗乐了。真的要信命吗？</p>
+                    <p>龚彪是大学毕业进入桦钢，坐办公室、事业编，目测前途一片光明。他始终带着学生的单纯，凡事都往好的一面想，没想到阳光的性格让他忽视了社会险恶的一面，越走越差。</p>
+                    <p>一个理想主义者爱上一个现实主义者，注定是悲剧。丽茹没有相中龚彪，却因为和厂长搞婚外情怀孕了，找龚彪接盘。</p>
+                    <p>各受暴击的老年行动队宣布散伙后第二天，他开着出租去买早餐，广播里宣布着彩票中奖号码。没想到，他竟然真的中奖了！就在这一刻，一辆大货车将他的小出租撞飞，坠江时，时间静止了。。。</p>
+                    <p>他乐观到了最后一刻。</p>
+                    <p><b>生活的一次次捶打，在他眼里，都只是笑话。他用幽默回敬生活的戏虐，嬉笑怒骂间，从未被生活打败。</b></p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="shen-mo">
+        <section style="display: flex; margin-bottom: 20px;">
+            <img src="../img/shenmo.jpg" alt="沈墨头像" style="width: 330px; height: 440px; margin-right: 20px;">
+            <div>
+                <h2>李庚希 饰 沈墨</h2>
+
+                <p class="italic-text">该倒霉的应该是他们</p>
+                <div style="text-align: left;">
+                    <p>沈默对王阳说，她一出生的时候，父母找高人给她算了一卦，高人看见她小拇指是四节就说，这孩子<b>命</b>硬，活不好。</p>
+                    <p>可是王阳不知道的是，沈默被大伯收养的10年，是人生中最黑暗的十年。直到沈默走出黑河，来到桦林上大学遇到王阳，这才算远离让人作呕的一家人，但是他们阴魂不散，总是想把沈默继续拖回那个黑暗的深渊。
+                    </p>
+                    <p>王阳和沈默说，你不要信<b>命</b>，<b>命是掌握在自己手中的。</b></p>
+                    <p>王阳身上，有她梦寐以求的生活。</p>
+                    <p>沈默在王阳身上第一次感觉到了来自外人的温暖。她想着自己一定要<b>掌握自己的命运</b>，从现在起，开启自己新的人生。</p>
+                    <p>是重获新生？还是开始下一个循环？</p>
+                    <p>沈默杀了两条人命，一条是港商卢文忠，一个是自己曾经的闺蜜殷红。卢文忠侵犯了她，恶有恶报。殷红是帮凶，死不足惜。</p>
+                    <p>但是她所做的这一切，却让她付出了惨痛的代价。她想和王阳一起生活，王阳死在了18年前的那个秋天，想和弟弟一起生活，傅卫军冤坐了18年的监狱。</p>
+                    <p>沈墨最后被抓住了，但是导演给的画面是她终于可以第一次在阳光下自由的呼吸，她的脸上没有慌张，而是格外的宁静和平和，这也是她的救赎和解脱。</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="ma-de-sheng">
+        <section style="display: flex; margin-bottom: 20px;">
+            <img src="../img/madesheng.jpg" alt="马德胜头像" style="width: 330px; height: 440px; margin-right: 20px;">
+            <div>
+                <h2>陈明昊 饰 马德胜</h2>
+
+                <p class="italic-text">我叫马德胜，问题解决不了你找我。</p>
+
+                <div style="text-align: left;">
+                    <p>20年前，是一个意气风发，气场强大不怒自威的当地神探；</p>
+                    <p>20年后，是一个鳏寡孤独，跳拉丁舞扭头晃腰的长发老人。</p>
+                    <p>这令观众渴望去探求他的生活，以及到底为什么变成了这样，还有在变成这样以后，他以前所擅长的技能，如何发挥更大的余热。</p>
+                    <p>而马德胜的存在，其实是在假定了一种“已经被认为离开工作岗位的老头子，如何重新赢得肯定与尊重”的前提下，对观众“渴望失而复得”心态的一种释放。大家看他破案很过瘾，希望自己哪怕老了，也一样能燃烧自己的<b>信仰与追求。</b>
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+    <script>
+        var button = document.getElementById('abo');
+        button.addEventListener('click', function () { window.location.href = 'about.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('rol');
+        button.addEventListener('click', function () { window.location.href = 'roles.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('line');
+        button.addEventListener('click', function () { window.location.href = 'timeline.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('det');
+        button.addEventListener('click', function () { window.location.href = 'details.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('rev');
+        button.addEventListener('click', function () { window.location.href = 'reviews.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('poem');
+        button.addEventListener('click', function () { window.location.href = 'poem.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('pro');
+        button.addEventListener('click', function () { window.location.href = 'products.html'; });
+    </script>
+</body>
+
+
+
+</html>

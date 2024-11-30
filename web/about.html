@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>about</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../img/black_background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+            /* 设置相对定位，为后续按钮绝对定位做基础 */
+            width: 100vw;
+            /* 宽度占满视口宽度 */
+            height: 100vh;
+            /* 高度占满视口高度，视口可视区域相当于我们设定的边界范围 */
+            margin: 0;
+            /* 去除页面默认的外边距 */
+            padding: 0;
+
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #aeada5a8;
+        }
+
+        #moveButton {
+            width: 50px;
+            /* 设置按钮宽度 */
+            height: 50px;
+            /* 设置按钮高度 */
+            border-radius: 50%;
+            /* 将按钮的四个角设置为圆形，值为宽度或高度的一半 */
+            background-color: lightblue;
+            /* 设置按钮背景颜色，可按需修改 */
+            border: none;
+            /* 去除边框，让外观更简洁，也可按需保留并设置样式 */
+        }
+
+        header {
+            background-color: rgb(184, 204, 216, 0.5);
+            color: #2f3c46;
+            padding: 10px 0;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+
+
+
+
+
+
+        img.poster {
+            max-width: 200%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: rgba(135, 187, 219, 0.7);
+            color: #000000
+        }
+
+        footer {
+            background-color: #6193b1;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .center-image-flex {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            height: 400px;
+            /* 定义容器的高度 */
+        }
+
+        .circular-image {
+            border-radius: 50%;
+            /* 设置为50%使图片变为圆形 */
+            width: 150px;
+            /* 设置图片宽度 */
+            height: 150px;
+            /* 设置图片高度，保持宽高比 */
+            object-fit: cover;
+            /* 保持图片内容的覆盖 */
+            margin-top: 50px;
+        }
+
+        .stylish-button {
+
+            padding: 10px 20px;
+            /* 按钮内边距 */
+            font-size: 16px;
+            /* 文字大小 */
+            color: rgb(251, 255, 237);
+            /* 文字颜色 */
+            background-color: rgb(79, 142, 187, 0.9);
+            /* 背景颜色 */
+            border: none;
+            /* 无边框 */
+            border-radius: 10px;
+            /* 圆角边框 */
+            cursor: pointer;
+            /* 鼠标悬停时显示指针 */
+            transition: background-color 0.3s;
+            /* 背景颜色渐变效果 */
+        }
+
+        /* 鼠标悬停时的样式 */
+        .stylish-button:hover {
+            background-color: #aeb489;
+            /* 鼠标悬停时的背景颜色 */
+        }
+
+        .italic-text {
+            font-style: italic;
+            /* 设置字体为斜体 */
+        }
+
+
+        .left-button:hover {
+            background-color: #70764a;
+            /* 鼠标悬停时的背景颜色 */
+        }
+
+        .left-button {
+            /* display: flex; */
+            /* justify-content: flex-end; */
+            padding: 10px 20px;
+            /* 按钮内边距 */
+            font-size: 16px;
+            /* 文字大小 */
+            color: rgb(255, 255, 255);
+            /* 文字颜色 */
+            background-color: #4779af;
+            /* 背景颜色 */
+            border: none;
+            /* 无边框 */
+            cursor: pointer;
+            /* 鼠标悬停时显示指针 */
+            transition: background-color 0.3s;
+            /* 背景颜色渐变效果 */
+        }
+
+        nav {
+            background-color: #4779af;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            column-count: 4;
+            column-gap: 1em;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto 20px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .inform {
+            position: absolute;
+            border: none;
+            /* 去除默认边框 */
+            border-radius: 20px;
+            /* 设置圆角半径，可根据需要调整数值 */
+
+            height: 120px;
+            width: 120px;
+            background-color: #4CAF50;
+            /* 按钮背景色 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 添加阴影实现立体感，参数依次为水平偏移、垂直偏移、模糊半径、阴影颜色及透明度 */
+            color: white;
+            /* 按钮文字颜色 */
+            cursor: pointer;
+            /* 鼠标悬停时变为手型指针 */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .inform:hover {
+            box-shadow: 0 16px 32px rgba(197, 198, 228, 0.3);
+            /* 鼠标悬停时加深阴影，增强立体感效果 */
+
+            background-color: #0056b3;
+
+        }
+
+        #button1 {
+            left: 16%;
+            top: 16%;
+        }
+
+        #button2 {
+            left: 10.5%;
+            top: 43.4%;
+        }
+
+        #button3 {
+            left: 16%;
+            top: 70.8%;
+        }
+
+        #button4 {
+            left: 77%;
+            top: 16%;
+        }
+
+        #button5 {
+            left: 82%;
+            top: 43.4%;
+        }
+
+        #button6 {
+            left: 77%;
+            /* 水平方向定位，先移动到页面水平中心左侧（注意这里是负值表示方向向左） */
+            top: 70.8%;
+        }
+
+        .hidden-section-left {
+            position: absolute;
+            left: -100%;
+            /* 初始位置在左侧屏幕外，距离左侧边界200px，可根据实际需求调整此数值 */
+
+            background-color: #ead709;
+            border-radius: 20px;
+            /* 设置圆角半径，可根据需要调整数值 */
+            transition: left 0.3s ease;
+            /* 设置section显示隐藏时水平移动的过渡效果 */
+        }
+
+
+        #section1 {
+            top: 15%;
+            height: 80px;
+            width: 12.5%;
+        }
+
+        #section2 {
+            top: 42.5%;
+            height: 80px;
+            width: 6.875%;
+        }
+
+        #section3 {
+            top: 69.5%;
+            height: 80px;
+            width: 12.5%;
+        }
+
+        .hidden-section-right {
+            /*     display: none; /* 初始状态下隐藏section元素 */
+            position: absolute;
+            left: 200%;
+            /* 初始位置在左侧屏幕外，距离左侧边界200px，可根据实际需求调整此数值 */
+
+            background-color: #ead709;
+            border-radius: 20px;
+            /* 设置圆角半径，可根据需要调整数值 */
+            transition: left 0.3s ease;
+            /* 设置section显示隐藏时水平移动的过渡效果 */
+        }
+
+        #section4 {
+            top: 15%;
+            height: 80px;
+            width: 12.5%;
+        }
+
+        #section5 {
+            top: 42.5%;
+            height: 80px;
+            width: 6.875%;
+        }
+
+        #section6 {
+            top: 69.5%;
+            height: 80px;
+            width: 12.5%;
+        }
+
+        .hidden-button {
+            display: none;
+        }
+
+        button img {
+            border-radius: 20px;
+            width: 100%;
+            /* 图片宽度设置为100%，使其占满按钮的宽度 */
+            height: 90%;
+            /* 图片高度设置为100%，使其占满按钮的高度，这样图片会自动拉伸或压缩以适配按钮大小 */
+            object-fit: cover;
+            /* 可选属性，用于控制图片在拉伸或压缩时如何填充按钮空间，cover表示保持图片宽高比并覆盖整个按钮区域，可能会裁剪图片部分内容 */
+            display: block;
+            /* 让图片以块级元素显示，去除默认的底部空白间隙等问题 */
+        }
+
+        /*
+        #button1:hover + #section1{
+        display: block; /* 当鼠标悬停在按钮上时，显示section元素 
+        left: 0; 
+        }       */
+
+        #article1 {
+            display: none;
+            position: fixed;
+            /* 使用固定定位，使其相对于浏览器窗口定位，便于在屏幕中间显示 */
+            top: 50%;
+            /* 垂直方向定位到窗口中间 */
+            left: 50%;
+            /* 水平方向定位到窗口中间 */
+            transform: translate(-50%, -50%);
+            /* 通过translate微调位置，使其中心精确位于屏幕中心 */
+            width: 40%;
+            /* 设置文章容器宽度，可根据实际需求调整 */
+            height: 60%;
+            /* 设置文章容器高度，可根据实际需求调整 */
+            background-color: black;
+            /* 文章容器背景色为黑色 */
+            color: yellow;
+            /* 文章文字颜色为黄色 */
+            padding: 20px;
+            overflow-y: auto;
+            /* 当文章内容超出容器高度时，出现滚动条 */
+        }
+
+        #article2{
+            display: none;
+            position: fixed;
+            /* 使用固定定位，使其相对于浏览器窗口定位，便于在屏幕中间显示 */
+            top: 50%;
+            /* 垂直方向定位到窗口中间 */
+            left: 50%;
+            /* 水平方向定位到窗口中间 */
+            transform: translate(-50%, -50%);
+            /* 通过translate微调位置，使其中心精确位于屏幕中心 */
+            width: 60%;
+            /* 设置文章容器宽度，可根据实际需求调整 */
+            height: 62%;
+            /* 设置文章容器高度，可根据实际需求调整 */
+            background-color: black;
+            /* 文章容器背景色为黑色 */
+            color: yellow;
+            /* 文章文字颜色为黄色 */
+            padding: 20px;
+            overflow-y: auto;
+            /* 当文章内容超出容器高度时，出现滚动条 */
+        }
+        #article5 {
+            display: none;
+            position: fixed;
+            /* 使用固定定位，使其相对于浏览器窗口定位，便于在屏幕中间显示 */
+            top: 50%;
+            /* 垂直方向定位到窗口中间 */
+            left: 50%;
+            /* 水平方向定位到窗口中间 */
+            transform: translate(-50%, -50%);
+            /* 通过translate微调位置，使其中心精确位于屏幕中心 */
+            width: 60%;
+            /* 设置文章容器宽度，可根据实际需求调整 */
+            height: 62%;
+            /* 设置文章容器高度，可根据实际需求调整 */
+            background-color: black;
+            /* 文章容器背景色为黑色 */
+            color: yellow;
+            /* 文章文字颜色为黄色 */
+            padding: 20px;
+            overflow-y: auto;
+            /* 当文章内容超出容器高度时，出现滚动条 */
+        }
+
+        #article4 {
+            display: none;
+            position: fixed;
+            /* 使用固定定位，使其相对于浏览器窗口定位，便于在屏幕中间显示 */
+            top: 50%;
+            /* 垂直方向定位到窗口中间 */
+            left: 50%;
+            /* 水平方向定位到窗口中间 */
+            transform: translate(-50%, -50%);
+            /* 通过translate微调位置，使其中心精确位于屏幕中心 */
+            width: 40%;
+            /* 设置文章容器宽度，可根据实际需求调整 */
+            height: 60%;
+            /* 设置文章容器高度，可根据实际需求调整 */
+            background-color: black;
+            /* 文章容器背景色为黑色 */
+            color: yellow;
+            /* 文章文字颜色为黄色 */
+            padding: 20px;
+            overflow-y: auto;
+            /* 当文章内容超出容器高度时，出现滚动条 */
+        }
+
+        #article6 {
+            display: none;
+            position: fixed;
+            /* 使用固定定位，使其相对于浏览器窗口定位，便于在屏幕中间显示 */
+            top: 50%;
+            /* 垂直方向定位到窗口中间 */
+            left: 50%;
+            /* 水平方向定位到窗口中间 */
+            transform: translate(-50%, -50%);
+            /* 通过translate微调位置，使其中心精确位于屏幕中心 */
+            width: 40%;
+            /* 设置文章容器宽度，可根据实际需求调整 */
+            height: 60%;
+            /* 设置文章容器高度，可根据实际需求调整 */
+            background-color: black;
+            /* 文章容器背景色为黑色 */
+            color: yellow;
+            /* 文章文字颜色为黄色 */
+            padding: 20px;
+            overflow-y: auto;
+            /* 当文章内容超出容器高度时，出现滚动条 */
+        }
+
+        .back-button {
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            background-color: #037b2b;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <nav>
+        <a href="../index.html" target="_blank">
+            <img src="../img/logo1.jpeg" alt="网站logo" style="width: 50px; height: 50px; margin-right: 10px;">
+        </a>
+        <button class="left-button" id="abo">漫长的季节</button>
+        <button class="left-button" id="rol">人物介绍</button>
+        <button class="left-button" id="line">时间线</button>
+        <button class="left-button" id="det">线索与细节</button>
+        <button class="left-button" id="rev">评价</button>
+        <button class="left-button" id="poem">《漫长的》</button>
+    </nav>
+
+
+    <button class="inform" id="button1"> <img src="../img/director.jpg" alt="按钮图片"></button>
+    <button class="inform" id="button2"> <img src="../img/logo1.jpeg" alt="按钮图片"></button>
+    <button class="inform" id="button3"> <img src="../img/factory.jpg" alt="按钮图片"></button>
+    <button class="inform" id="button4"> <img src="../img/meeting.jpg" alt="按钮图片"></button>
+    <button class="inform" id="button5"> <img src="../img/railway.jpg" alt="按钮图片"></button>
+    <button class="inform" id="button6"> <img src="../img/main_idea.jpeg" alt="按钮图片"></button>
+
+    <section class="hidden-section-left" id="section1">
+        <h2>关于导演</h2>
+        <p>点击左侧按钮了解更多</p>
+    </section>
+
+    <section class="hidden-section-left" id="section2">
+        <h2>关于本剧</h2>
+        <p>点击左侧</p>
+    </section>
+
+    <section class="hidden-section-left" id="section3">
+        <p>本内容暂不可见</p>
+    </section>
+
+    <section class="hidden-section-right" id="section4">
+        <h2>时代背景</h2>
+    </section>
+
+    <section class="hidden-section-right" id="section5">
+        <h2>创作背景</h2>
+    </section>
+
+    <section class="hidden-section-right" id="section6">
+        <h2>“往前看，别回头”</h2>
+        <p>写在最后</p>
+    </section>
+
+    <section class="hidden-section-right" id="director">
+        <h2>辛爽 导演作品</h2>
+    </section>
+
+    <div id="article1" class="hidden-article"> <!-- 用于显示文章的容器，初始隐藏 -->
+        <article>
+            <h2>导演 辛爽</h2>
+            <p>辛爽，1981年3月11日出生于吉林省四平市，中国内地男导演、吉他手。毕业于中国政法大学国际经济法专业。</p>
+            <p>2023年，执导的悬疑剧《漫长的季节》播出，
+                同年10月25日，凭借《漫长的季节》获第六届初心榜“年度五大青年导演”奖。
+                2024年1月18日，凭借《漫长的季节》获得影视榜样·2023年度总评榜主创类-最佳导演；
+                6月，凭借电视剧《漫长的季节》获得第29届上海电视节白玉兰奖最佳导演奖</p>
+            <p>谈及《漫长的季节》的创作过程。他表示，拍一部作品更希望和观众达成情感而非情绪层面的共鸣。
+                在他的讲述之中，“时间”是提及频率很高的词汇，仿佛时间是这部剧真正的主角。
+                “我们想用时间的方法去讲时间，讲时间是怎么从一群人身上穿过，在他们身上留下了怎样的痕迹，最后时间又是怎样抹平了这些痕迹。”</p>
+            <p>剧本、表演、音乐、美术、光影、剪辑……要夸的地方太多，许多人干脆在短评里言简意赅地留言“谢谢辛爽”。
+                而导演辛爽的回应同样单刀直入——剧集开分那天，他在微博上发了四个字“谢谢观众”；
+                尾声那场大雪落下时，他写“打个响指吧，我们打个共鸣的响指”。导演与观众通了心意，没什么是比这更有效的创作了。</p>
+            <p>借剧中被当成题眼的出自文学策划班宇的诗“一小颗眼泪滴在石头上/很长时间也不会干涸/整个季节将它结成了琥珀”，导演辛爽和主创班底用他们的方法，把共鸣结成了琥珀。</p>
+        </article>
+
+        <button class="back-button" id="backbutton1">返回</button>
+    </div>
+
+    <div id="article2" class="hidden-article"> <!-- 用于显示文章的容器，初始隐藏 -->
+        <article>
+            <h2>剧情介绍</h2>
+            <p>‌《漫长的季节》是一部由辛爽执导的悬疑剧，讲述了出租车司机王响在儿子去世后，因一起套牌案卷入了多年的悬案，与好友龚彪和退休刑警马德胜组成探案三人组，
+                揭开过去谜团的故事。</p>
+            <p>剧情围绕王响和他的朋友们展开，他们通过回忆和现实交织的方式，揭示了20年前的一桩碎尸案及其对家庭和工厂的影响。
+                剧中不仅有悬疑元素，还融入了大量生活化剧情，展现了时代变化中个体的命运。该剧通过多条时间线叙事，展现了人物在时间中的变化和成长，
+                反映了社会背景和时代变迁对人物命运的影响。《漫长的季节》以其复杂的故事情节和精湛的演员表演获得了观众和评论家的高度评价，成为国产剧中罕见的高分作品。</p>
+            <p>《漫长的季节》是一部剧集，我倒觉得它更像是一部漫长的电影，不论是规格、手法、质感还是结构上，这都是一部以电影方式制作的剧集，用大量的细节及漫长的时间来做铺垫，
+                同时用悬疑设问及人物碰撞的喜剧方式来带领观众一同推进故事，最后再用充斥着剧作巧思的两集时间来集中释放情绪。
+                我们不能言语，只是长久的发呆，深切的回味，以及叹一口长长的气。慨叹年轻的生命无端走向终结；慨叹美好的女孩被世间的浑浊毁坏；慨叹巨大的执念将人们困在原地；
+                慨叹时光错位爱情消散，物是人非遗憾终生……</p>
+            <p>漫长的季节终将过去，最后终于知道答案的王响，摇晃晃来到儿子王阳死去的地方，谜题已被解开，似乎他失去了所有动力。瘫软地躺在小凉河桥上，就像20年前躺在铁轨上一样。
+                直到被养子王北托起，王响说：“这个秋天怎么这么长，像过了一辈子似的。”而后，雪花飘起，在王响苍老的脸上融化，他笑着又说：“这雪我见过，这是从过去来的。”
+                然后画面一转，是1997年、1998年相交时冬天的大雪图景：笑呵呵的王响，在窗边妻子儿子的注视下出门办事；打完厂长脸带伤痕的龚彪，坐在石梯上，重新戴好黄丽茹送他的绿围巾；
+                黄丽茹打开门，露出笑脸；马队长在扣押嫌疑人的路上，点燃一支香烟；傅卫军想起死去的喜欢的女孩，痛哭无声；沈墨在小凉河边上，看向远方；王阳看着大雪，写完最后的诗歌。
+                大雪弥漫中，命运在等着书写下一行。</p>
+
+        </article>
+        <button class="back-button" id="backbutton2">返回</button>
+        <button class="back-button" id="_timeline">时间线梳理</button>
+    </div>
+
+    <div id="article4" class="hidden-article"> <!-- 用于显示文章的容器，初始隐藏 -->
+        <article>
+            <h2>相关背景</h2>
+            <p>‌《那是1999年的除夕夜，屋外爆竹声声，烟花绽放，人们告别洪水滔天的去年，辞旧迎新、欢度佳节。既然是过年，春节联欢晚会自然是绕不开的话题。
+                舞台上，黄宏、句号表演一个叫《打气儿》的小品，其中黄宏扮演一位下岗职工，句号扮演街道办官员，得知句号对下岗分流有怨气，黄宏如是说：</p>
+            <p>“你是身在福中不知福，谁都能一帆风顺呢，谁这辈子还不遇上点事呀。你就那我来说吧，十八岁毕业，我就到了自行车厂，我是先入团后入党，我上过三次光荣榜，
+                厂长特别器重我，眼瞅要提副组长，领导一跟我谈话，说单位减员要并厂，当时我就表了态，咱工人要替国家想，我不下岗谁下岗。”。</p>
+            <p>《漫长的季节》形象地描述了东北下岗人员的艰辛往事。其所呈现的下岗人员众生相，是一个时代的缩影。真实反映普通民众的酸甜苦辣，是这部剧能引发观众共鸣的基础</p>
+
+
+        </article>
+        <button class="back-button" id="backbutton4">返回</button>
+    </div>
+
+    <div id="article4" class="hidden-article"> <!-- 用于显示文章的容器，初始隐藏 -->
+        <article>
+            <h2>时代背景</h2>
+            <p>‌《那是1999年的除夕夜，屋外爆竹声声，烟花绽放，人们告别洪水滔天的去年，辞旧迎新、欢度佳节。既然是过年，春节联欢晚会自然是绕不开的话题。
+                舞台上，黄宏、句号表演一个叫《打气儿》的小品，其中黄宏扮演一位下岗职工，句号扮演街道办官员，得知句号对下岗分流有怨气，黄宏如是说：</p>
+            <p>“你是身在福中不知福，谁都能一帆风顺呢，谁这辈子还不遇上点事呀。你就那我来说吧，十八岁毕业，我就到了自行车厂，我是先入团后入党，我上过三次光荣榜，
+                厂长特别器重我，眼瞅要提副组长，领导一跟我谈话，说单位减员要并厂，当时我就表了态，咱工人要替国家想，我不下岗谁下岗。”。</p>
+            <p>《漫长的季节》形象地描述了东北下岗人员的艰辛往事。其所呈现的下岗人员众生相，是一个时代的缩影。真实反映普通民众的酸甜苦辣，是这部剧能引发观众共鸣的基础</p>
+
+
+        </article>
+        <button class="back-button" id="backbutton4">返回</button>
+    </div>
+
+    <div id="article5" class="hidden-article"> <!-- 用于显示文章的容器，初始隐藏 -->
+        <article>
+            <h2>创作背景</h2>
+            <p>该剧是原创剧本，最初由于小千创作。辛爽拿到剧本时已是第四稿，他和团队用了近一年时间做调整。重点强化了原剧本中生活质感的部分，然后把生活的部分和悬疑的部分平衡，
+                再放大剧本里一些很好的人物，让主题更明确。辛爽是东北人，他想通过该剧呈现一个自己印象里“特别明媚的东北形象”。观众过去看到的许多影视剧对东北的描述，大多是冷、下雪，有种肃杀感。
+                其实东北人非常幽默乐观、积极生活，他想强调这部分 [37]。在剧情构思方面，该剧把核心视点落在了几位老年人身上，编剧潘依然表示，把老人当主角的影视剧很少，
+                但以老人视角展开故事能做的新东西又很多，且大部分观众对老年人群体有情感共鸣。于是主创团队用老年人身上独有的执着与专注，构建起剧中角色各异的人物特性。辛爽表示，
+                该剧想要讲述的不是一个案子，而是一个人、一群人、一代人，探讨人遇到困境该如何面对。想要表达的主题是，一旦有一天生活变成一片废墟，或当有一天发现自己被困在废墟中，要爬起来继续往前走。</p>
+
+
+        </article>
+        <button class="back-button" id="backbutton5">返回</button>
+    </div>
+
+    <div id="article6" class="hidden-article"> <!-- 用于显示文章的容器，初始隐藏 -->
+        <article>
+            <h2></h2>
+            <p>‌《漫长的季节》以诗意的方式脱颖而出，成为2018年以来豆瓣评分最高的悬疑剧，实现流量、口碑双丰收。该剧的超越之处在于突破现实所创造的人生境界。
+                这个境界来源于剧情超越了那些似曾相识的家长里短，有一种“独上高楼望尽天涯路”的求索精神；正是“衣带渐宽终不悔，为伊消得人憔悴”苦苦追寻，
+                最终才有“蓦然回首那人却在灯火阑珊处”诗意。小人物的不屈不挠给该剧笼罩了一层人性的光辉——因为爱，一切皆有可能。
+                也许，该剧以悠远的哲思与二十年后的历史回眸，就是想告诉观众——人这一生，有了爱，就有了承担一切苦难的勇气。正是在承担中，展现了人性的伟大。
+                剧中悠远的哲思与时代记忆交相辉映。九十年代芸芸众生的平凡岁月时不时拨动心弦，剧中人的命运也是观众父辈的命运。该剧以东北方言、东北老工业场景为背景，
+                描述了一群人的命运。但弥漫全剧的诗意却远远超越了这个有限时空，那共鸣的响指划破夜空，化作承担命运的号子，大声地告诉观众“往前看，别回头！</p>
+            <p>悬疑题材剧的叙事是不是都要通过案件来表达，这是创作者一直以来都在思考的问题。该剧虽然也讲述了案件的调查过程，却没有将其作为主体内容加以渲染，而是深入挖掘生活宝藏，
+                用悬疑外壳包裹浓郁的时代气息和独特的人生感悟，让观众在社会生活的细节描摹、时代背景的高精度还原以及专业演员的生动演绎中，走进20世纪末东北小城富有烟火气的故事情境，
+                沉浸式体验剧中人的喜怒哀乐，从而获得人生启示。</p>
+            <p>该剧聚焦一群努力生活的普通人，表现了他们的缺点、局限，更展示他们的热血、坚韧。他们面对命运的考验和生活的苦难，始终坚守做人原则，用乐观的态度看待人生，终于成为生活的英雄。
+                该剧结尾处，头发花白的王响笑着说“往前看，别回头”，一句话点明了该剧的主题思想，传达了积极向上的价值理念。</p>
+
+
+        </article>
+        <button class="back-button" id="backbutton6">返回</button>
+    </div>
+
+    <script>
+        var button = document.getElementById('abo');
+        button.addEventListener('click', function () { window.location.href = 'about.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('rol');
+        button.addEventListener('click', function () { window.location.href = 'roles.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('line');
+        button.addEventListener('click', function () { window.location.href = 'timeline.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('det');
+        button.addEventListener('click', function () { window.location.href = 'details.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('rev');
+        button.addEventListener('click', function () { window.location.href = 'reviews.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('poem');
+        button.addEventListener('click', function () { window.location.href = 'poem.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('pro');
+        button.addEventListener('click', function () { window.location.href = 'products.html'; });
+    </script>
+    <script>
+        var button = document.getElementById('_timeline');
+        button.addEventListener('click', function () { window.location.href = 'timeline.html'; });
+    </script>
+
+
+    <script src="js/about.js"></script>
+</body>
+
+
+
+</html>
